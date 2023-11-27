@@ -11,7 +11,6 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import type { ContactRecord } from "./data";
 
 import appStylesHref from "./app.css";
 import { getContacts } from "./data";
@@ -26,7 +25,7 @@ export const loader = async () => {
 };
 
 export default function App() {
-  const { contacts } = useLoaderData<{ contacts: ContactRecord[] }>();
+  const { contacts } = useLoaderData<typeof loader>();
 
   return (
     <html lang="en">
