@@ -12,10 +12,10 @@ import {
   useNavigation,
   useSubmit,
 } from "@remix-run/react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
+import type { FormEventHandler } from "react";
 import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
-import type { ChangeEventHandler } from "react";
 
 import appStylesHref from "./app.css";
 import { createEmptyContact, getContacts } from "./data";
@@ -54,6 +54,14 @@ export default function App() {
     setQuery(q || "");
   }, [q]);
 
+  const handleFormChange = useCallback<FormEventHandler<HTMLFormElement>>(
+    (e) => {
+      const isFirstSearch = q === null;
+      submit(e.currentTarget, { replace: !isFirstSearch });
+    },
+    [q, submit]
+  );
+
   return (
     <html lang="en">
       <head>
@@ -66,11 +74,7 @@ export default function App() {
         <div id="sidebar">
           <h1>Remix Contacts</h1>
           <div>
-            <Form
-              id="search-form"
-              role="search"
-              onChange={(e) => submit(e.currentTarget)}
-            >
+            <Form id="search-form" role="search" onChange={handleFormChange}>
               <input
                 id="q"
                 aria-label="Search contacts"
