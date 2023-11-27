@@ -119,7 +119,7 @@ function App() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-7KVDBGCK.js", imports: ["/build/_shared/chunk-FGZKITOP.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-62C6F3QG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 } }, version: "ef26d09a", hmr: void 0, url: "/build/manifest-EF26D09A.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-7KVDBGCK.js", imports: ["/build/_shared/chunk-FGZKITOP.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-R7HEVUUL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 } }, version: "dcea94bc", hmr: void 0, url: "/build/manifest-DCEA94BC.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "production", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
